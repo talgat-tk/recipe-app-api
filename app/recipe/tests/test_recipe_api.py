@@ -196,7 +196,7 @@ class PrivateRecipeAPITests(TestCase):
     def test_update_recipe_assign_tag(self):
         tag_breakfast = Tag.objects.create(user=self.user, name='Breakfast')
         recipe = create_recipe(user=self.user)
-        recipe.add(tag_breakfast)
+        recipe.tags.add(tag_breakfast)
 
         tag_lunch = Tag.objects.create(user=self.user, name='Lunch')
         payload = {
